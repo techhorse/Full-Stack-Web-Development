@@ -1,0 +1,46 @@
+<html>
+<head></head>
+<body>
+Enter First no:<br>
+<input type = "text" id="fno" ><br>
+Enter second no:<br>
+<input type="text" id="sno"><br>
+Result:<br>
+<input type="text" id="third">
+<input type="button" value="add" onclick="call(0)">
+<input type="button" value="sub" onclick="call(1)">
+<input type="button" value="mul" onclick="call(2)">
+<input type="button" value="div" onclick="call(3)">
+<script>
+function call(z){
+var x,y;
+
+x = parseInt(document.getElementById("fno").value);
+y = parseInt(document.getElementById("sno").value);
+if(z==0){
+document.getElementById("third").value = (x+y);
+}
+if(z==1){
+document.getElementById("third").value = (x-y);
+}
+if(z==2){
+document.getElementById("third").value = (x*y);
+}
+if(z==3){
+document.getElementById("third").value = (x/y);
+}
+
+
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
