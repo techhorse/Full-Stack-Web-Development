@@ -1,0 +1,173 @@
+<html>
+
+<head>
+<title>
+My Html Document
+</title>
+
+<style>
+.dark{
+background-color:#345c9b;
+height:40px;
+display:block;
+
+}
+.image{
+background-image:url("back.jpg");
+height:block;
+opacity:0.9;
+}
+.button {
+  background-color: #004A7F;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.button {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+.container{
+opacity:0.5;
+
+}
+
+
+</style>
+<script>
+function validate(){
+var a,b,c,d,e,f;
+
+a = document.forms["myform"]["name"].value;
+b = document.forms["myform"]["text"].value;
+c = document.forms["myform"]["uname"].value;
+d  = document.forms["myform"]["pass"].value;
+e  = document.forms["myform"]["email"].value;
+f  = document.forms["myform"]["hobbies"].value;
+if(a == "" || b == "" || c == "" || d== "" || e=="" || f==""){
+alert("the field should not be empty");
+return false;
+}
+var $email = $('form input[name="email'); //change form to id or containment selector
+var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+if ($email.val() == '' || !re.test($email.val()))
+{
+    alert('Please enter a valid email address.');
+    return false;
+}
+
+
+    var p = document.getElementById('Pass').value,
+        errors = [];
+    if (p.length < 8) {
+        errors.push("Your password must be at least 8 characters"); 
+    }
+    if (p.search(/[a-z]/i) < 0) {
+        errors.push("Your password must contain at least one letter.");
+    }
+    if (p.search(/[0-9]/) < 0) {
+        errors.push("Your password must contain at least one digit."); 
+    }
+    if (errors.length > 0) {
+        alert(errors.join("\n"));
+        return false;
+    }
+    return true;
+
+
+
+
+}
+
+
+
+</script>
+</head>
+
+<body class="image">
+
+<div class="dark">
+
+</div>
+<div class="">
+<div class="">
+<center>
+<form action="demo.html method="post" name="myform" onsubmit="return validate()">
+<table>
+  
+    <tr><td><label><b>Name:</b></label></td></tr>
+   <tr> <td><input type="text" placeholder="Enter Name" name="name" ></td></tr>
+
+    <tr><td><label><b>Address:</b></label></td></tr>
+    <tr><td><textarea name="text" placeholder="" rows="10" cols="23" ></textarea></td></tr>
+	<tr><td><label><b>User Name:</b></label></td></tr>
+   <tr> <td><input type="text" placeholder="Enter Username" name="uname"></td></tr>
+   <tr><td><label><b>Password:</b></label></td></tr>
+   <tr> <td><input type="password" placeholder="Enter Password" id = "pass"name="pass"></td></tr>
+   <tr><td><label><b>Email:</b></label></td></tr>
+   <tr> <td><input type="email" placeholder="Enter Email" name="email"></td></tr>
+   <tr><td><label><b>Hobbies:</b></label></td></tr>
+   <tr> <td><input type="checkbox" placeholder="singing" name="hobbies">Singing
+   <input type="checkbox" placeholder="Coding" name="hobbies">Coding
+    <input type="checkbox" placeholder="Dancing" name="hobbies">Dancing
+	 
+    <input type="checkbox" placeholder="cooking" name="hobbies">Cooking</td></tr>
+	<tr><td>Gender:<input type="radio" placeholder="gender" name="gender">Male</input><input type="radio" placeholder="gender" name="gender">Female</td></tr></td></tr>
+	<tr><td>Select:<select>
+	<option value="Select">Courses</option>
+	<option value="Java">Java</option>
+	<option value="HTML">HTML</option>
+	<option value="PHP">PHP</option>
+	</select></td></tr>
+	<br><br>
+        
+    <tr><td><button type="submit" class="button">Register</button></td></tr></table>
+    
+ 
+
+  
+    
+  
+</form>
+</center>
+</div>
+
+</div>
+</body>
+
+
+</html>
